@@ -7,10 +7,10 @@ import java.sql.Statement;
 
 import conexion.ConexionBD;
 
-public class PruebaConexion {
+public class Pruebadepartamentos {
 
 	public static void main(String[] args) {
-	
+		
 		ConexionBD conexion = new ConexionBD();
 		
 		System.out.println("Conectando a la base de datos...");
@@ -25,7 +25,7 @@ public class PruebaConexion {
 			//Paso 2. Otener el Statement
 			sentencia = con.createStatement();
 			//Paso 3. Ejecujtar la sentencia
-			resultado=sentencia.executeQuery("select cod_empleado,nombre,salario from empleados");
+			resultado=sentencia.executeQuery("select cod_centro,nombre,salario from empleados");
 			//Paso 4.Recorrer el resultado
 			while(resultado.next()) {
 				int codEmpleado = resultado.getInt("cod_empleado");
@@ -48,6 +48,8 @@ public class PruebaConexion {
 		System.out.println("Desconectando de la base de datos.");
 		conexion.desconectar();
 		
+		// TODO Auto-generated method stub
+
 	}
 
 	}
